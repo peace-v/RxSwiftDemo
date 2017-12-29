@@ -37,7 +37,6 @@
 		22152D011FF36BA600A7BC59 /* RxAlamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22152CF51FF36BA500A7BC59 /* RxAlamofire.framework */; };
 		22152D021FF36BA600A7BC59 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22152CF61FF36BA500A7BC59 /* RxSwift.framework */; };
 		22152D031FF36BA600A7BC59 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22152CF71FF36BA500A7BC59 /* RxBlocking.framework */; };
-		22152D041FF36BA600A7BC59 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22152CF81FF36BA600A7BC59 /* SwiftyJSON.framework */; };
 		22152D051FF36BA600A7BC59 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22152CF91FF36BA600A7BC59 /* Alamofire.framework */; };
 		22152D0E1FF37E5C00A7BC59 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22152D0D1FF37E5C00A7BC59 /* MainViewController.swift */; };
 		22152D101FF37EF500A7BC59 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22152D0F1FF37EF500A7BC59 /* SearchViewController.swift */; };
@@ -45,6 +44,9 @@
 		22152D151FF383E100A7BC59 /* WaterfallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22152D141FF383E100A7BC59 /* WaterfallLayout.swift */; };
 		22152D171FF3989800A7BC59 /* WaterfallCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22152D161FF3989800A7BC59 /* WaterfallCollectionView.swift */; };
 		22152D191FF3998700A7BC59 /* WaterfallImgageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22152D181FF3998700A7BC59 /* WaterfallImgageCell.swift */; };
+		22152D5B1FF4DFA300A7BC59 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22152D5A1FF4DFA300A7BC59 /* Request.swift */; };
+		22152D6D1FF62CE500A7BC59 /* AlamofireObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22152D6B1FF62CE500A7BC59 /* AlamofireObjectMapper.framework */; };
+		22152D6E1FF62CE500A7BC59 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22152D6C1FF62CE500A7BC59 /* ObjectMapper.framework */; };
 		225971E31FF337E800D58BAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225971E21FF337E800D58BAE /* AppDelegate.swift */; };
 		225971E81FF337E800D58BAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 225971E61FF337E800D58BAE /* Main.storyboard */; };
 		225971EA1FF337E800D58BAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 225971E91FF337E800D58BAE /* Assets.xcassets */; };
@@ -143,6 +145,9 @@
 		22152D141FF383E100A7BC59 /* WaterfallLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterfallLayout.swift; sourceTree = "<group>"; };
 		22152D161FF3989800A7BC59 /* WaterfallCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterfallCollectionView.swift; sourceTree = "<group>"; };
 		22152D181FF3998700A7BC59 /* WaterfallImgageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterfallImgageCell.swift; sourceTree = "<group>"; };
+		22152D5A1FF4DFA300A7BC59 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		22152D6B1FF62CE500A7BC59 /* AlamofireObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireObjectMapper.framework; path = Carthage/Build/iOS/AlamofireObjectMapper.framework; sourceTree = "<group>"; };
+		22152D6C1FF62CE500A7BC59 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
 		225971DF1FF337E800D58BAE /* RxSwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxSwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		225971E21FF337E800D58BAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		225971E71FF337E800D58BAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -162,6 +167,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22152D6D1FF62CE500A7BC59 /* AlamofireObjectMapper.framework in Frameworks */,
+				22152D6E1FF62CE500A7BC59 /* ObjectMapper.framework in Frameworks */,
 				22152CFA1FF36BA600A7BC59 /* Differentiator.framework in Frameworks */,
 				22152CFB1FF36BA600A7BC59 /* Kingfisher.framework in Frameworks */,
 				22152CFC1FF36BA600A7BC59 /* RxMoya.framework in Frameworks */,
@@ -172,7 +179,6 @@
 				22152D011FF36BA600A7BC59 /* RxAlamofire.framework in Frameworks */,
 				22152D021FF36BA600A7BC59 /* RxSwift.framework in Frameworks */,
 				22152D031FF36BA600A7BC59 /* RxBlocking.framework in Frameworks */,
-				22152D041FF36BA600A7BC59 /* SwiftyJSON.framework in Frameworks */,
 				22152D051FF36BA600A7BC59 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,6 +306,8 @@
 		22152CED1FF36BA500A7BC59 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				22152D6B1FF62CE500A7BC59 /* AlamofireObjectMapper.framework */,
+				22152D6C1FF62CE500A7BC59 /* ObjectMapper.framework */,
 				22152CF91FF36BA600A7BC59 /* Alamofire.framework */,
 				22152CEE1FF36BA500A7BC59 /* Differentiator.framework */,
 				22152CEF1FF36BA500A7BC59 /* Kingfisher.framework */,
@@ -338,6 +346,7 @@
 			children = (
 				22152D161FF3989800A7BC59 /* WaterfallCollectionView.swift */,
 				22152D181FF3998700A7BC59 /* WaterfallImgageCell.swift */,
+				22152D141FF383E100A7BC59 /* WaterfallLayout.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -345,10 +354,25 @@
 		22152D131FF3805700A7BC59 /* Others */ = {
 			isa = PBXGroup;
 			children = (
-				22152D141FF383E100A7BC59 /* WaterfallLayout.swift */,
 			);
 			name = Others;
 			path = RxSwiftDemo/Others;
+			sourceTree = SOURCE_ROOT;
+		};
+		22152D591FF4DF8200A7BC59 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				22152D5A1FF4DFA300A7BC59 /* Request.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		22152D6A1FF62CAD00A7BC59 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			path = RxSwiftDemo/Model;
 			sourceTree = SOURCE_ROOT;
 		};
 		225971D61FF337E800D58BAE = {
@@ -379,6 +403,8 @@
 				22152D0B1FF37E1100A7BC59 /* Controllers */,
 				22152D0C1FF37E1100A7BC59 /* Views */,
 				22152D0A1FF37E1000A7BC59 /* ViewModels */,
+				22152D6A1FF62CAD00A7BC59 /* Model */,
+				22152D591FF4DF8200A7BC59 /* Request */,
 				22152D131FF3805700A7BC59 /* Others */,
 				225971E21FF337E800D58BAE /* AppDelegate.swift */,
 				225971E61FF337E800D58BAE /* Main.storyboard */,
@@ -558,7 +584,8 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxDataSources.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxMoya.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ObjectMapper.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/AlamofireObjectMapper.framework",
 			);
 			outputPaths = (
 			);
@@ -589,6 +616,7 @@
 				22152CC51FF36ACA00A7BC59 /* MJRefreshComponent.m in Sources */,
 				22152D101FF37EF500A7BC59 /* SearchViewController.swift in Sources */,
 				22152CBC1FF36AC900A7BC59 /* MJRefreshAutoGifFooter.m in Sources */,
+				22152D5B1FF4DFA300A7BC59 /* Request.swift in Sources */,
 				22152CBB1FF36AC900A7BC59 /* MJRefreshAutoStateFooter.m in Sources */,
 				22152D151FF383E100A7BC59 /* WaterfallLayout.swift in Sources */,
 				22152CBF1FF36AC900A7BC59 /* MJRefreshStateHeader.m in Sources */,

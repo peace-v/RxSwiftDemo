@@ -1,6 +1,6 @@
 github "ReactiveX/RxSwift" ~> 4.0
 github "RxSwiftCommunity/RxAlamofire" "master"
 github "Moya/Moya"
-github "SwiftyJSON/SwiftyJSON"
+github "tristanhimmelman/AlamofireObjectMapper" ~> 5.0
 github "RxSwiftCommunity/RxDataSources" ~> 3.0
 github "onevcat/Kingfisher" ~> 4.0

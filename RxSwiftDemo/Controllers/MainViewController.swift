@@ -7,18 +7,24 @@
 //
 
 import UIKit
+import RxSwift
+import Moya
+import RxMoya
 
 class MainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-    var collectionView: WaterfallCollectionView?
+    private var collectionView: WaterfallCollectionView?
+    private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
+        getTrendingData()
     }
 
     // Mark: - setup UI
 
     private func setupCollectionView() {
+        // TODO: 1. refresh control 2. preload
         if #available(iOS 11.0, *) {
             collectionView = WaterfallCollectionView(frame: view.safeAreaLayoutGuide.layoutFrame, itemHeightClosure: { (itemW, indexPath) -> CGFloat in
                 let random = arc4random() % 2
@@ -56,6 +62,27 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
         cell.backgroundColor = UIColor.cyan
         return cell
+    }
+
+    // Mark: - Data request
+
+    // TODO:网络状况变化
+    private func getTrendingData() {
+        let provider = MoyaProvider<GIPHY>()
+        provider.rx.request(.trending(api_key: API_KEY))
+            .debug()
+            .filterSuccessfulStatusCodes()
+            .subscribe(onSuccess: { (response: Response) in
+//                let data = response.data
+//                do {
+//                    let json = try JSON(data:data)
+//                    print(json)
+//                } catch {
+//                }
+        }) { (error) in
+            print(error)
+        }
+            .disposed(by: disposeBag)
     }
 
 }

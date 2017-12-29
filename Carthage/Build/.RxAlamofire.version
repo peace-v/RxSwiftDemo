@@ -2,7 +2,7 @@
   "commitish" : "5f04a751ffa5b78fc6fad009bba9f72cf80f109e",
   "iOS" : [
     {
-      "hash" : "3872a856efeaa4c446a957cdf42838635f123a2ea51dfea78cb9a3bcade3242f",
+      "hash" : "133232c2af65a9da5c7f74d481ccf99fe5d99de8f68bf6a31f5eb08c19dc67cf",
       "name" : "RxAlamofire"
     }
   ]
