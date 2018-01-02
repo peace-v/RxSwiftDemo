@@ -54,7 +54,6 @@ class WaterfallLayout: UICollectionViewLayout {
     override func prepare() {
         super.prepare()
 
-        // TODO:是否有必要写在这里
         if columnCount > 0 {
             for item in 0..<columnCount {
                 columnMaxYDic[item] = sectionInsets.top

@@ -14,8 +14,8 @@ class WaterfallImgageCell: UICollectionViewCell {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = UIColor.white
-        imageView.frame = frame
+        imageView.frame = CGRect(x: 0, y: 0, width: frame.width, height: frame.height)
+        imageView.backgroundColor = UIColor.yellow
         contentView.addSubview(imageView)
     }
     

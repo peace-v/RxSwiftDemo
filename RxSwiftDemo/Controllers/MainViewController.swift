@@ -8,16 +8,23 @@
 
 import UIKit
 import RxSwift
+import RxDataSources
 import Moya
 import RxMoya
+import SwiftyJSON
+import ObjectMapper
+import Kingfisher
 
-class MainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class MainViewController: UIViewController {
     private var collectionView: WaterfallCollectionView?
     private let disposeBag = DisposeBag()
-    
+    private var gifs = Variable<[GIFModel]>([])
+    private var gifsH: [CGFloat] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
+        setupDataSource()
         getTrendingData()
     }
 
@@ -27,60 +34,79 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         // TODO: 1. refresh control 2. preload
         if #available(iOS 11.0, *) {
             collectionView = WaterfallCollectionView(frame: view.safeAreaLayoutGuide.layoutFrame, itemHeightClosure: { (itemW, indexPath) -> CGFloat in
-                let random = arc4random() % 2
-                if random == 0 {
-                    return 100
+                if let height = self.gifs.value[indexPath.item].images?.fixed_width_downsampled_height {
+                    if let doubleValue = Double(height) {
+                        self.gifsH.append(CGFloat(doubleValue))
+                        return CGFloat(doubleValue)
+                    }
                 }
-                return 200
+                self.gifsH.append(0)
+                return 0
             })
         } else {
             collectionView = WaterfallCollectionView(frame: view.frame, itemHeightClosure: { (itemW, indexPath) -> CGFloat in
-                let random = arc4random() % 2
-                if random == 0 {
-                    return 100
+                if let height = self.gifs.value[indexPath.item].images?.fixed_width_downsampled_height {
+                    if let doubleValue = Double(height) {
+                        self.gifsH.append(CGFloat(doubleValue))
+                        return CGFloat(doubleValue)
+                    }
                 }
-                return 200
+                self.gifsH.append(0)
+                return 0
             })
         }
-        collectionView?.backgroundColor = UIColor.yellow
-        collectionView?.delegate = self
-        collectionView?.dataSource = self
+        collectionView?.backgroundColor = UIColor.white
+        collectionView?.delegate = nil
+        collectionView?.dataSource = nil
         view.addSubview(collectionView!)
     }
 
-    // Mark: - UICollectionViewDelegate && UICollectionViewDataSource
-
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+    private func setupDataSource() {
+        guard let collectionView = collectionView else {
+            return
+        }
+        gifs.asObservable().bind(to: collectionView.rx.items(cellIdentifier: "cell", cellType: WaterfallImgageCell.self)) { index, model, cell in
+            if model.images?.fixed_width_downsampled_url != nil {
+                if let url = URL(string: (model.images?.fixed_width_downsampled_url)!) {
+                    cell.imageView.kf.setImage(with: url)
+                }
+            }
+            cell.frame.size.height = self.gifsH[index]
+            cell.imageView.frame.size.height = self.gifsH[index]
+            }
+            .disposed(by: disposeBag)
     }
 
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 100
-    }
+    // Mark: - Data request3
 
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        cell.backgroundColor = UIColor.cyan
-        return cell
-    }
-
-    // Mark: - Data request
-
-    // TODO:网络状况变化
+    // TODO: 1. 网络状况变化 2. 内存泄露
     private func getTrendingData() {
         let provider = MoyaProvider<GIPHY>()
         provider.rx.request(.trending(api_key: API_KEY))
             .debug()
-            .filterSuccessfulStatusCodes()
             .subscribe(onSuccess: { (response: Response) in
-//                let data = response.data
-//                do {
-//                    let json = try JSON(data:data)
-//                    print(json)
-//                } catch {
-//                }
-        }) { (error) in
-            print(error)
+                let data = response.data
+                let statusCode = response.statusCode
+                do {
+                    let json = try JSON(data:data)
+                    if (statusCode >= 200 && statusCode < 300) {
+                        var gifs: [GIFModel] = []
+                        for (_,subJson):(String, JSON) in json["data"] {
+                            if let jsonString = subJson.rawString() {
+                                if let gif = GIFModel(JSONString: jsonString) {
+                                    gifs.append(gif)
+                                }
+                            }
+                        }
+                        self.gifs.value = gifs
+                    } else {
+                        print(json["message"].stringValue)
+                    }
+                } catch {
+                    print("json解析失败")
+                }
+            }) { (error) in
+                print(error)
         }
             .disposed(by: disposeBag)
     }

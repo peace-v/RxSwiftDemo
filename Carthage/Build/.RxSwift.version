@@ -2,7 +2,7 @@
   "commitish" : "4.1.0",
   "iOS" : [
     {
-      "hash" : "abe5ba69a6788d78e5ffe82ce0460008aa8bee6c8c7e8bf78de91cfdbb7ed87e",
+      "hash" : "780ab6e7713c900be7998baf617f5d2ffdb9e3a71adca79ee7e3b6120d875b6a",
       "name" : "RxBlocking"
     },
     {
@@ -14,7 +14,7 @@
       "name" : "RxCocoa"
     },
     {
-      "hash" : "6d79dadaacc3515e2323b3e65cca3e9608aca8dab0c1a0a855828e01691c48ad",
+      "hash" : "7211b573071ec93e9664abc0a0d1801d09722f504e74669f61d65c12e17f7c72",
       "name" : "RxSwift"
     }
   ]

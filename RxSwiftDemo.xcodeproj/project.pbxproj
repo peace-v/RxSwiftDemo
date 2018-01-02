@@ -45,8 +45,9 @@
 		22152D171FF3989800A7BC59 /* WaterfallCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22152D161FF3989800A7BC59 /* WaterfallCollectionView.swift */; };
 		22152D191FF3998700A7BC59 /* WaterfallImgageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22152D181FF3998700A7BC59 /* WaterfallImgageCell.swift */; };
 		22152D5B1FF4DFA300A7BC59 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22152D5A1FF4DFA300A7BC59 /* Request.swift */; };
-		22152D6D1FF62CE500A7BC59 /* AlamofireObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22152D6B1FF62CE500A7BC59 /* AlamofireObjectMapper.framework */; };
 		22152D6E1FF62CE500A7BC59 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22152D6C1FF62CE500A7BC59 /* ObjectMapper.framework */; };
+		22152D701FF631D300A7BC59 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22152D6F1FF631D300A7BC59 /* Model.swift */; };
+		22152D711FF63CE300A7BC59 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22152CF81FF36BA600A7BC59 /* SwiftyJSON.framework */; };
 		225971E31FF337E800D58BAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225971E21FF337E800D58BAE /* AppDelegate.swift */; };
 		225971E81FF337E800D58BAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 225971E61FF337E800D58BAE /* Main.storyboard */; };
 		225971EA1FF337E800D58BAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 225971E91FF337E800D58BAE /* Assets.xcassets */; };
@@ -148,6 +149,7 @@
 		22152D5A1FF4DFA300A7BC59 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		22152D6B1FF62CE500A7BC59 /* AlamofireObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireObjectMapper.framework; path = Carthage/Build/iOS/AlamofireObjectMapper.framework; sourceTree = "<group>"; };
 		22152D6C1FF62CE500A7BC59 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
+		22152D6F1FF631D300A7BC59 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		225971DF1FF337E800D58BAE /* RxSwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxSwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		225971E21FF337E800D58BAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		225971E71FF337E800D58BAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -167,7 +169,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22152D6D1FF62CE500A7BC59 /* AlamofireObjectMapper.framework in Frameworks */,
+				22152D711FF63CE300A7BC59 /* SwiftyJSON.framework in Frameworks */,
 				22152D6E1FF62CE500A7BC59 /* ObjectMapper.framework in Frameworks */,
 				22152CFA1FF36BA600A7BC59 /* Differentiator.framework in Frameworks */,
 				22152CFB1FF36BA600A7BC59 /* Kingfisher.framework in Frameworks */,
@@ -370,6 +372,7 @@
 		22152D6A1FF62CAD00A7BC59 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				22152D6F1FF631D300A7BC59 /* Model.swift */,
 			);
 			name = Model;
 			path = RxSwiftDemo/Model;
@@ -585,7 +588,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxMoya.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/ObjectMapper.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/AlamofireObjectMapper.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
 			);
 			outputPaths = (
 			);
@@ -607,6 +610,7 @@
 				22152CC01FF36AC900A7BC59 /* MJRefreshGifHeader.m in Sources */,
 				225971E31FF337E800D58BAE /* AppDelegate.swift in Sources */,
 				22152D121FF37F0400A7BC59 /* ImageViewController.swift in Sources */,
+				22152D701FF631D300A7BC59 /* Model.swift in Sources */,
 				22152CBA1FF36AC900A7BC59 /* MJRefreshBackNormalFooter.m in Sources */,
 				22152CC11FF36AC900A7BC59 /* MJRefreshFooter.m in Sources */,
 				22152CBD1FF36AC900A7BC59 /* MJRefreshAutoNormalFooter.m in Sources */,
