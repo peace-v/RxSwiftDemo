@@ -54,6 +54,7 @@
 		225971ED1FF337E800D58BAE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 225971EB1FF337E800D58BAE /* LaunchScreen.storyboard */; };
 		225971F81FF337E800D58BAE /* RxSwiftDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225971F71FF337E800D58BAE /* RxSwiftDemoTests.swift */; };
 		225972031FF337E800D58BAE /* RxSwiftDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225972021FF337E800D58BAE /* RxSwiftDemoUITests.swift */; };
+		22F7BBD0200CA62E00C0CAFC /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F7BBCF200CA62E00C0CAFC /* Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -162,6 +163,7 @@
 		225971FE1FF337E800D58BAE /* RxSwiftDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxSwiftDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		225972021FF337E800D58BAE /* RxSwiftDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftDemoUITests.swift; sourceTree = "<group>"; };
 		225972041FF337E800D58BAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22F7BBCF200CA62E00C0CAFC /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -356,6 +358,7 @@
 		22152D131FF3805700A7BC59 /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				22F7BBCF200CA62E00C0CAFC /* Extension.swift */,
 			);
 			name = Others;
 			path = RxSwiftDemo/Others;
@@ -630,6 +633,7 @@
 				22152CBE1FF36AC900A7BC59 /* MJRefreshNormalHeader.m in Sources */,
 				22152CB51FF36AC900A7BC59 /* UIScrollView+MJExtension.m in Sources */,
 				22152CB81FF36AC900A7BC59 /* MJRefreshBackGifFooter.m in Sources */,
+				22F7BBD0200CA62E00C0CAFC /* Extension.swift in Sources */,
 				22152CB91FF36AC900A7BC59 /* MJRefreshBackStateFooter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

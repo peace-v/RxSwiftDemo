@@ -52,7 +52,6 @@ extension GIPHY: TargetType {
 
     var task: Task {
         return .requestParameters(parameters: parameters!, encoding: parameterEncoding)
-//        return .requestPlain
     }
 
     var sampleData: Data {
